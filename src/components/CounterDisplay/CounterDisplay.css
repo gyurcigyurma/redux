@@ -1,0 +1,14 @@
+.Display {
+    position: fixed;
+    left: 200px;
+    box-sizing: border-box;
+    top: 12px;
+    width: 300px;
+    outline: 2px solid rgba(163, 174, 185, .7);
+    height: 240px;
+    padding: 95px 136px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    font-size: 34px;
+    background-color: #2f2fc9;
+    color: gold
+}

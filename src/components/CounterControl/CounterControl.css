@@ -1,0 +1,17 @@
+.Counter {
+    width: 150px;
+    height: 50px;
+    outline: 2px solid lightslategray;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 12px;
+    text-align: center;
+    vertical-align: 0%
+}
+
+.Counter:hover {
+    background-color: gold;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+
+}
