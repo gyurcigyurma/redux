@@ -28,7 +28,7 @@ class Counter extends Component {
                 <CounterControl label="substract 7" clicked={this.props.onSubstractCounter} />
                 <CounterDisplay valueToDisplay={this.props.ctr} />
                 <hr />
-                <button onClick={this.props.onStoreResult}>Store result</button>
+                <button onClick={() => this.props.onStoreResult(this.props.ctr)}>Store result</button>
                 <ul>
                     {this.props.storedResults.map(strResult => (
                         <li key={strResult.id} onClick={() => this.props.onDeleteResult(strResult.id)}>{strResult.value}</li>
@@ -43,8 +43,8 @@ class Counter extends Component {
 const mapStateToProps = (state) => {
     //gives us the part of data what we need from the global big store, and maps to specific key ('ctr' here)
     return {
-        ctr: state.counter,
-        storedResults: state.results
+        ctr: state.ctr.counter,
+        storedResults: state.res.results
     }
 }
 
@@ -57,7 +57,7 @@ const mapDispatchToProps = dispatch => {
         onDecrementCounter: () => dispatch({ type: ACTION_TYPES.DECREMENT }),
         onAddCounter: () => dispatch({ type: ACTION_TYPES.ADD, value: 5 }),
         onSubstractCounter: () => dispatch({ type: ACTION_TYPES.SUBSTRACT, value: 7 }),
-        onStoreResult: () => { dispatch({ type: ACTION_TYPES.STORE_RESULT }) },
+        onStoreResult: (result) => { dispatch({ type: ACTION_TYPES.STORE_RESULT, result}) },
         onDeleteResult: (id) => { dispatch({ type: ACTION_TYPES.DELETE_RESULT, resultElementId: id }) },
     }
 }
